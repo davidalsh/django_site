@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Flower(models.Model):
-    count = models.IntegerField(default=0, blank=True)
+    count = models.IntegerField(default=0, blank=True, null=True)
     description = models.TextField(null=True)
     delivered_at = models.DateTimeField(auto_now_add=True, blank=True)
     could_use_int_bouquet = models.BooleanField(default=True)
