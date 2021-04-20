@@ -26,7 +26,26 @@ class MyView(View):
 
 
 def main(request):
-    test_template = loader.render_to_string("main.html")
+    # return HttpResponse("<button>Some button</button>")
+    test_template = loader.render_to_string("templates_example.html",
+                                            context={"str": "Test string 4545",
+                                                     "int": 12,
+                                                     "books": [
+                                                         {'title': '1984',
+                                                          'author': {
+                                                              'name': 'George',
+                                                              'age': 45}},
+                                                         {'title': 'Timequake',
+                                                          'author': {
+                                                              'name': 'Kurt',
+                                                              'age': 75}},
+                                                         {'title': 'Alice',
+                                                          'author': {
+                                                              'name': 'Lewis',
+                                                              'age': 33}},
+                                                     ]
+                                                     })
+
     return HttpResponse(test_template)
 
 
@@ -42,7 +61,7 @@ def file(request):
 
 
 def redirect(request):
-    return HttpResponseRedirect("http://www.google.com")
+    return HttpResponseRedirect("www.google.com")
 
 
 def not_allowed(request):
