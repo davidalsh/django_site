@@ -27,7 +27,6 @@ class MyView(View):
 
 def main(request):
     test_template = loader.render_to_string("main.html")
-
     return HttpResponse(test_template)
 
 
