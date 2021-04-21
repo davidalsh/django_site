@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'durationwidget',
     'lesson_1',
     'lesson_2',
     'lesson_3',
     'lesson_5',
+    'lesson_6',
+    'lesson_8',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +61,7 @@ ROOT_URLCONF = 'django_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['lesson_6', 'lesson_3', 'lesson_8'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,4 +128,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = 'lesson_3/static/'
+STATIC_URL = '/static/'
+MEDIA_ROOT = 'lesson_5/static/tmp/'
